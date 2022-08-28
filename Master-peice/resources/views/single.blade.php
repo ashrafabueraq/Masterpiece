@@ -9,29 +9,50 @@
 <link rel="stylesheet" type="text/css" href="{{asset('styles/single_responsive.css')}}">
 </head>
 
+
+
 <div class="container single_product_container">
-    <div class="row">
-        <div class="col">
+
+    <div class="div-img">
+         <img src="{{asset('images/'.$category->category_image)}}" width="100%" height="400px"> 
+        <div style="background-color: #f0f8ff29"> <h1 class="hcat">{{$category->category_name}}</h1> </div>
+    
+    </div>
+
+    {{-- <div class="row">
+        <div class="col"> --}}
 
             <!-- Breadcrumbs -->
 
-            <div class="breadcrumbs d-flex flex-row align-items-center">
+            {{-- <div class="breadcrumbs d-flex flex-row align-items-center">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{url('single/'.$category->category_name)}}">{{$category->category_name}}</a></li> --}}
                     {{-- <li><a href="categories.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Men's</a></li>
                     <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>Single Product</a></li> --}}
-                </ul>
+                {{-- </ul>
             </div>
 
         </div>
-    </div>
+    </div> --}}
 
-    <div class="row" style="border:solid 1px red">
+
+    {{-- <div style="width: 100%">
+
+        <img src="{{asset('images/'.$category->category_image)}}">
+        
+    </div> --}}
+
+
+    {{-- @foreach ($products as $prod) --}}
+        
+    
+
+    {{-- <div class="row" >
         
             <div class="col-lg-7">
 				<div class="single_product_pics">
 					<div class="row">
-						<div class="col-lg-3 thumbnails_col order-lg-1 order-2">
+						<div class="col-lg-3 thumbnails_col order-lg-1 order-2"> --}}
 							{{-- <div class="single_product_thumbnails">
 								<ul>
 									<li><img src="images/single_1_thumb.jpg" alt="" data-image="images/single_1.jpg"></li>
@@ -39,44 +60,26 @@
 									<li><img src="images/single_3_thumb.jpg" alt="" data-image="images/single_3.jpg"></li>
 								</ul>
 							</div> --}}
-						</div>
+						{{-- </div>
 						<div class="col-lg-9 image_col order-lg-2 order-1">
 							<div class="single_product_image">
-								<div class="single_product_image_background" style="background-image:url(images/single_2.jpg)"></div>
+								<div class="single_product_image_background" style="background-image:url({{asset('images/'.$prod->product_image)}});"></div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-            {{-- <div class="single_product_pics">
-                <div class="row">
-                    <div class="col-lg-3 thumbnails_col order-lg-1 order-2">
-                        <div class="single_product_thumbnails" style="background-color:#fe4c50; width:200px;">
-                         <p style="color: rgb(253, 248, 248)">name user 1 : Price $</p>
-                         <p style="color: rgb(246, 239, 239)">name user 2 : Price $</p>
-
-
-                        </div>
-                    </div>
-                    <div class="col-lg-9 image_col order-lg-2 order-1">
-                        <div class="single_product_image">
-                            <div class="single_product_image_background" style="background-image:url(images/single_2.jpg)"></div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-        
         <div class="col-lg-5">
             <div class="product_details">
                 <div class="product_details_title">
-                    <h2> Samsung Phone</h2>
-                    <p>Version 2022 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem laborum quas dolores consectetur asperiores omnis laboriosam, dicta deleniti, perspiciatis est facilis dolorem quibusdam veritatis quae repudiandae inventore doloremque laudantium quo!</p>
+                    <h2> {{$prod->product_name}}</h2>
+                    <p>{{$prod->product_desc}}</p>
                 </div>
                 <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
-                    <div class="product_price">Timer : 5.2.45</div> <br />
+                    <div class="product_price">Timer : {{$prod->created_at}}</div> <br />
                 </div>
                 <div class="free_delivery d-flex flex-row align-items-center justify-content-center">
-                    <div class="product_price">Price : 10.25 JOD</div> <br />
+                    <div class="product_price">{{$prod->price}} JOD</div> <br />
                 </div>
                 <div class="product_price"> </div>
                 <ul class="star_rating">
@@ -89,9 +92,115 @@
                 </div>
             </div>
         </div>
+
+        
     </div>
 
+    @endforeach --}}
+
+
+      
+<div class="py-5">
+    <div class="container">
+         {{-- <h3 style="border-bottom:solid 1px #a90b23; text-align:center; color:#a90b23;">{{$category->category_name}}</h3> --}}
+        <a href="#">
+        <div class="row" style="margin-top: 50px;">
+
+            
+   
+            
+            @foreach ($products as $p)
+                
+       
+            <div class="col-md-3 mb-3" >
+                <div class="card">
+                    <img src="{{asset('images/'.$p->product_image)}}" alt="image">
+                    <div class="card-body">
+                        <h5>{{$p->product_name}}</h5>
+                        {{-- <span class="float-start" style="color: black">{{$p->product_desc}}</span><br> --}}
+                        <span class="float-start" style="color: red; font-weight:bold">{{$p->price}} JOD</span>
+                       
+                        {{-- <span class="float-end">end price</span> --}}
+                        <button class="prima">Show</button>
+
+                    </div>
+                </div>
+            </div>
+
+            @endforeach
+           
+
+            
+            
+
+        </div>
+    </a>
+
+        
+    </div>
+</div> 
+
+    
+
 </div>
+
+
+<style>
+    
+    .card{
+        border-radius:15px;
+        transition: all 0.75s;
+        box-shadow: 0 0 3px 0 #00000073;
+        overflow: hidden;
+
+    }
+     .card:hover{
+        transform: scale(1.1);
+        box-shadow: 0 11px 14px rgb(0 0 0 / 25%), 0 8px 20px rgb(0 0 0 /10%)
+    
+    }
+    .prima{
+        border-radius: 40px;
+        border: none;
+        background: linear-gradient(45deg, #fe5f28, #a90b23);
+        color: white;
+        margin-left: 60px;
+        cursor: pointer;
+        width: 75px;
+        height: 37px;
+        
+    }
+    .prima:hover{
+
+     
+        background: linear-gradient(45deg, #a90b23,#fe5f28);
+
+    }
+    .div-img{
+        position: relative;
+        top: 45px;
+        width: 100%; 
+        height:100%;
+        filter: drop-shadow(2px 4px 6px black);
+        /* background-size: cover */
+        /* background-image:url({{asset('images/'.$category->category_image)}}) */
+        
+    }
+    .hcat{
+        color: #a90b23;
+        text-align:center;
+        
+
+    }
+  
+    
+</style>
+
+
+
+
+
+
 
 <!-- Tabs -->
 

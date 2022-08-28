@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('category_name')->unique();
             $table->string('category_description');
-            $table->text('category-image');
+            $table->text('category_image');
             $table->timestamps();
         });
     }

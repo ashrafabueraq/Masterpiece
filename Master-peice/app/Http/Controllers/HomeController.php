@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\category;
+use App\Models\product;
 
 class HomeController extends Controller
 {
@@ -25,4 +27,14 @@ class HomeController extends Controller
     {
         return view('main');
     }
+
+    public function category(){
+
+        $category = Category :: all();
+        $products = Product :: all();
+        return view('main', compact('category','products'));
+    }
+
+   
 }
+

@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
+
+
+
 use Illuminate\Http\Request;
+use App\Models\category;
+use App\Models\product;
 
 class CategoryController extends Controller
 {
@@ -14,8 +18,37 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+         $category = Category :: all();
+         $products = Product:: all();
+         return view('main', compact('category', 'products'));
     }
+
+
+
+    
+
+    public function getProduct($category_name)
+    {
+
+        if(Category::where('category_name', $category_name)->exists()){
+            $category = Category::where('category_name', $category_name)->first();
+            $products = Product::where('category_id',$category->id)->get();
+            return view('single', compact('category', 'products'));
+        }else{
+            return redirect('/singe{category_name}')->with('status', ' item dosnot exists');
+        }
+
+
+
+
+    }
+
+
+    // public function allProduct(){
+
+    //     $products = Product :: all();
+    //     return  view('main', compact('products'));
+    // }
 
     /**
      * Show the form for creating a new resource.

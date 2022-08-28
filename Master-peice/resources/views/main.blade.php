@@ -18,19 +18,26 @@
     </div>
 </div>
 
-<!-- Banner -->
-
+<!-- Catgory -->
+<div style="margin-top:75px;">
+<h2 style="text-align:center; font-whight:bold;">All Categories</h2>
 <div class="banner">
     <div class="container">
+        
         <div class="row">
+            @foreach ($category as $item)
+                
+            
             <div class="col-md-4">
-                <div class="banner_item align-items-center" style="background-image:url(images/phones.jpg)">
+                <div class="banner_item align-items-center" style="background-image:url(images/{{$item->category_image}})">
                     <div class="banner_category">
-                        <a href="{{url('/single')}}">Phones</a>
+                        <a href="{{url('single/'.$item->category_name)}}">{{$item->category_name}}</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+
+            @endforeach
+            {{-- <div class="col-md-4">
                 <div class="banner_item align-items-center" style="background-image:url(images/watches.jpg)">
                     <div class="banner_category">
                         <a href="{{url('/single')}}">Watches</a>
@@ -44,13 +51,14 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
+</div>
 </div>
 
 <!-- New Arrivals -->
 
-<div class="new_arrivals">
+{{-- <div class="new_arrivals">
     <div class="container">
         <div class="row">
             <div class="col text-center">
@@ -58,192 +66,95 @@
                     <h2> Auction Products</h2>
                 </div>
             </div>
-        </div>
-        <div class="row align-items-center">
+        </div> --}}
+        {{-- <div class="row align-items-center">
             <div class="col text-center">
                 <div class="new_arrivals_sorting">
-                    <ul class="arrivals_grid_sorting clearfix button-group filters-button-group">
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li>
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".women">Phones</li>
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">Watches</li>
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".men">Boxes</li>
-                    </ul>
+                    <ul class="arrivals_grid_sorting clearfix button-group filters-button-group"> --}}
+                        {{-- <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li> --}}
+                        {{-- @foreach ($category as $item)
+                            
+                        
+                       <a href="{{url('/'.$item->id)}}"> <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center">{{$item->category_name}}</li>
+                        @endforeach --}}
+                        {{-- <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">Watches</li>
+                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" >Boxes</li> --}}
+                    {{-- </ul>
                 </div>
             </div>
-        </div>
+        </div> --}}
+
+{{-- 
         <div class="row">
             <div class="col">
-                <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'>
+                <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }' style="display: flex">
 
-                    <!-- Product 1 -->
 
-                    <div class="product-item men">
-                        <div class="product discount product_filter">
-                            <div class="product_image">
-                                <img src="images/box1.avif" alt="">
-                            </div>
-                            <div class="favorite favorite_left"></div>
-                            {{-- <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div> --}}
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-                                {{-- <div class="product_price">$520.00<span>$590.00</span></div> --}}
-                            </div>
-                        </div>
-                            <div class="red_button add_to_cart_button"><a href="#">Bid Now</a></div> 
-                    </div>
+                    @foreach ($products as $p) --}}
+                        
+                  
 
-                    <!-- Product 2 -->
-
-                    <div class="product-item women">
+                    {{-- <div class="product-item women">
                         <div class="product product_filter">
                             <div class="product_image">
-                                <img src="images/single_2.jpg" alt="">
+                                <img src="{{asset('images/'.$p->product_image)}}" alt="poducts">
                             </div>
-                            <div class="favorite"></div>
+                            <div class="favorite"></div> --}}
                             {{-- <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"></div> --}}
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-                                <div class="product_price">$610.00</div>
+                            {{-- <div class="product_info">
+                                <h6 class="product_name"><a href="single.html">{{$p->product_name}}</a></h6>  --}}
+                                {{-- <p class="product_desc">{{$p->product_desc}}</p> --}}
+                                {{-- <div class="product_price">{{$p->price}} JOD</div>
                             </div>
                         </div>
                         <div class="red_button add_to_cart_button"><a href="#">Bid Now</a></div>
                     </div>
+                    @endforeach
 
-                    <!-- Product 3 -->
-
-                    <div class="product-item women">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="images/phone1.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-                                <div class="product_price">$120.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">Bid Now</a></div>
-                    </div>
-
-                    <!-- Product 4 -->
-
-                    <div class="product-item accessories">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="images/watch1.jpg" alt="">
-                            </div>
-                            {{-- <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div> --}}
-                            <div class="favorite favorite_left"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-                                <div class="product_price">$410.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">Bid Now</a></div>
-                    </div>
-
-                    <!-- Product 5 -->
-
-                    {{-- <div class="product-item women men">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="images/phone2.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-                                <div class="product_price">$180.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                    </div> --}}
-
-                    <!-- Product 6 -->
-
-                    <div class="product-item accessories">
-                        <div class="product discount product_filter">
-                            <div class="product_image">
-                                <img src="images/watch2.jpg" alt="">
-                            </div>
-                            <div class="favorite favorite_left"></div>
-                            {{-- <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>-$20</span></div> --}}
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="#single.html">Fujifilm X100T 16 MP Digital Camera (Silver)</a></h6>
-                                <div class="product_price">$520.00<span>$590.00</span></div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">Bid Now</a></div>
-                    </div>
-
-                    <!-- Product 7 -->
-
-                    <div class="product-item women">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="images/phone3.jpg" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Samsung CF591 Series Curved 27-Inch FHD Monitor</a></h6>
-                                <div class="product_price">$610.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">Bid Now</a></div>
-                    </div>
-
-                    <!-- Product 8 -->
-
-                    <div class="product-item accessories">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="images/watch3.png" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Blue Yeti USB Microphone Blackout Edition</a></h6>
-                                <div class="product_price">$120.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">Bid Now</a></div>
-                    </div>
-
-                    <!-- Product 9 -->
-
-                    <div class="product-item men">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="images/box2.jpg" alt="">
-                            </div>
-                            <div class="product_bubble product_bubble_right product_bubble_red d-flex flex-column align-items-center"><span>sale</span></div>
-                            <div class="favorite favorite_left"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">DYMO LabelWriter 450 Turbo Thermal Label Printer</a></h6>
-                                <div class="product_price">$410.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">Bid Now</a></div>
-                    </div>
-
-                    <!-- Product 10 -->
-
-                    <div class="product-item men">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="images/box3.jpg" alt="">
-                            </div>
-                            <div class="favorite"></div>
-                            <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">Pryma Headphones, Rose Gold & Grey</a></h6>
-                                <div class="product_price">$180.00</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">Bid Now</a></div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+
+  
+ <div class="py-5" style="margin-top: 75px">
+    <div class="container">
+        <h2 style="text-align: center;"> Auction Products</h2>
+        <a href="#">
+        <div class="row" style="margin-top: 50px;">
+            
+            @foreach ($products as $p)
+                
+       
+            <div class="col-md-3 mb-3" >
+                <div class="card">
+                    <img src="{{asset('images/'.$p->product_image)}}" alt="image">
+                    <div class="card-body">
+                        <h5>{{$p->product_name}}</h5>
+                        {{-- <span class="float-start" style="color: black">{{$p->product_desc}}</span><br> --}}
+                        <span class="float-start" style="color: red; font-weight:bold">{{$p->price}} JOD</span>
+                       
+                        {{-- <span class="float-end">end price</span> --}}
+                        <button class="prima">Show</button>
+
+                    </div>
+                </div>
+            </div>
+
+            @endforeach
+           
+
+            
+            
+
+        </div>
+    </a>
+
+        
+    </div>
+</div> 
 
 <!-- Deal of the week -->
 
@@ -284,6 +195,71 @@
         </div>
     </div>
 </div>
+
+<style>
+
+    .card{
+        border-radius:15px;
+        transition: all 0.75s;
+        box-shadow: 0 0 3px 0 #00000073;
+        overflow: hidden;
+
+    }
+    /* .card::before{
+        content: "";
+        width: 60px;
+        height: 520px;
+        left: 10px;
+        top:-70px ;
+        position: absolute;
+        background: linear-gradient(#00e5ff,#b400fb);
+        animation: animate 5s linear infinite;
+
+    } */
+    /* @keyframes animate{
+        0%{
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg)
+        };
+    } */
+    /* .card::after{
+        content: "";
+        position: absolute;
+        background: #080808;
+        inset: 3px;
+        border-radius:5px; 
+    } */
+     .card:hover{
+        transform: scale(1.1);
+        box-shadow: 0 11px 14px rgb(0 0 0 / 25%), 0 8px 20px rgb(0 0 0 /10%)
+    
+    }
+    .prima{
+        border-radius: 40px;
+        border: none;
+        background: linear-gradient(45deg, #fe5f28, #a90b23);
+        color: white;
+        margin-left: 60px;
+        cursor: pointer;
+        width: 75px;
+        height: 37px;
+        
+    }
+    .prima:hover{
+
+        /* transition: all 1.5s;
+        transform: scale(1.1); */
+        background: linear-gradient(45deg, #a90b23,#fe5f28);
+
+    }
+ 
+
+
+
+
+</style>
 
     
 @endsection

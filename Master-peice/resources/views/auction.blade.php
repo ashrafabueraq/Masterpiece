@@ -36,12 +36,12 @@
                         <h5>Product Category</h5>
                     </div>
                     <ul class="sidebar_categories">
-                        <li><a href="#">Men</a></li>
-                        <li class="active"><a href="#"><span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>Women</a></li>
-                        <li><a href="#">Accessories</a></li>
-                        <li><a href="#">New Arrivals</a></li>
-                        <li><a href="#">Collection</a></li>
-                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">All</a></li>
+                        <li><a href="#">Phones</a></li>
+                        <li><a href="#">Watches</a></li>
+                        <li><a href="#">Boxes</a></li>
+                        {{-- <li><a href="#">Collection</a></li>
+                        <li><a href="#">Shop</a></li> --}}
                     </ul>
                 </div>
 
@@ -121,7 +121,7 @@
 
                                 <!-- Product 2 -->
 
-                                <div class="product-item women">
+                                {{-- <div class="product-item women">
                                     <div class="product product_filter">
                                         <div class="product_image">
                                             <img src="images/product_2.png" alt="">
@@ -134,11 +134,11 @@
                                         </div>
                                     </div>
                                     <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                                </div>
+                                </div> --}}
 
                                 <!-- Product 3 -->
 
-                                <div class="product-item women">
+                                {{-- <div class="product-item women">
                                     <div class="product product_filter">
                                         <div class="product_image">
                                             <img src="images/product_3.png" alt="">
@@ -150,10 +150,10 @@
                                         </div>
                                     </div>
                                     <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                                </div>
+                                </div> --}}
 
                                 <!-- Product 4 -->
-
+{{-- 
                                 <div class="product-item accessories">
                                     <div class="product product_filter">
                                         <div class="product_image">
@@ -167,11 +167,11 @@
                                         </div>
                                     </div>
                                     <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                                </div>
+                                </div> --}}
 
                                 <!-- Product 5 -->
 
-                                <div class="product-item women men">
+                                {{-- <div class="product-item women men">
                                     <div class="product product_filter">
                                         <div class="product_image">
                                             <img src="images/product_5.png" alt="">
@@ -183,11 +183,11 @@
                                         </div>
                                     </div>
                                     <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                                </div>
+                                </div> --}}
 
                                 <!-- Product 6 -->
 
-                                <div class="product-item accessories">
+                                {{-- <div class="product-item accessories">
                                     <div class="product discount product_filter">
                                         <div class="product_image">
                                             <img src="images/product_6.png" alt="">
@@ -200,11 +200,11 @@
                                         </div>
                                     </div>
                                     <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                                </div>
+                                </div> --}}
 
                                 <!-- Product 7 -->
 
-                                <div class="product-item women">
+                                {{-- <div class="product-item women">
                                     <div class="product product_filter">
                                         <div class="product_image">
                                             <img src="images/product_7.png" alt="">
@@ -216,11 +216,11 @@
                                         </div>
                                     </div>
                                     <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                                </div>
+                                </div> --}}
 
                                 <!-- Product 8 -->
 
-                                <div class="product-item accessories">
+                                {{-- <div class="product-item accessories">
                                     <div class="product product_filter">
                                         <div class="product_image">
                                             <img src="images/product_8.png" alt="">
@@ -232,11 +232,11 @@
                                         </div>
                                     </div>
                                     <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                                </div>
+                                </div> --}}
 
                                 <!-- Product 9 -->
 
-                                <div class="product-item men">
+                                {{-- <div class="product-item men">
                                     <div class="product product_filter">
                                         <div class="product_image">
                                             <img src="images/product_9.png" alt="">
@@ -249,11 +249,11 @@
                                         </div>
                                     </div>
                                     <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                                </div>
+                                </div> --}}
 
                                 <!-- Product 10 -->
 
-                                <div class="product-item men">
+                                {{-- <div class="product-item men">
                                     <div class="product product_filter">
                                         <div class="product_image">
                                             <img src="images/product_10.png" alt="">
@@ -265,11 +265,11 @@
                                         </div>
                                     </div>
                                     <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                                </div>
+                                </div> --}}
 
                                 <!-- Product 11 -->
 
-                                <div class="product-item women men">
+                                {{-- <div class="product-item women men">
                                     <div class="product product_filter">
                                         <div class="product_image">
                                             <img src="images/product_5.png" alt="">
@@ -281,11 +281,11 @@
                                         </div>
                                     </div>
                                     <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                                </div>
+                                </div> --}}
 
                                 <!-- Product 12 -->
 
-                                <div class="product-item accessories">
+                                {{-- <div class="product-item accessories">
                                     <div class="product discount product_filter">
                                         <div class="product_image">
                                             <img src="images/product_6.png" alt="">
@@ -298,7 +298,7 @@
                                         </div>
                                     </div>
                                     <div class="red_button add_to_cart_button"><a href="#">add to cart</a></div>
-                                </div>
+                                </div> --}}
                             </div>
 
                             <!-- Product Sorting -->

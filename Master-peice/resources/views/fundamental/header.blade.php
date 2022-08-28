@@ -56,7 +56,7 @@
 										@endif
 										@else
 										<li>
-                                         <a href="#"> {{ Auth::user()->name }} </a>
+                                         <a href="{{url('profile')}}"> Profile </a>
 
 										 <a  href="{{ route('logout') }}"
 										 onclick="event.preventDefault();
@@ -89,7 +89,7 @@
 				<div class="row">
 					<div class="col-lg-12 text-right">
 						<div class="logo_container">
-							<a href="#" class="navbar-brand"><img src="images/logo-auction.png" alt="logo" width="100" height="100"></a>
+							<a href="{{url('/')}}" class="navbar-brand"><img src="{{asset('images/logo-auction.png')}}" alt="logo" width="100" height="100"></a>
 						</div>
 						<nav class="navbar">
 							<ul class="navbar_menu">

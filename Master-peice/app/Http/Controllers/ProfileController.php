@@ -2,19 +2,43 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\category;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
-class CategoryController extends Controller
+class ProfileController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
+
+
     {
-        //
+        // $data = [
+        //     'name' => 'ashraf',
+        //     'age' => '25',            
+        // ];
+       // compact('data')
+    //    $data = User :: all();
+           
+       
+        return view('profile');
     }
 
     /**
@@ -41,10 +65,10 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\category  $category
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(category $category)
+    public function show($id)
     {
         //
     }
@@ -52,10 +76,10 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\category  $category
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(category $category)
+    public function edit($id)
     {
         //
     }
@@ -64,21 +88,31 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\category  $category
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, category $category)
+    public function update(Request $request, $id)
     {
-        //
+        $edit = User :: find(Auth::user()->id);
+        $edit->name = $request->input('name');
+        $edit->email = $request->input('email');
+        $edit->password=Hash::make($request->input('password'));
+        $edit->phone = $request->input('phone');
+        $edit->address = $request->input('address');
+
+
+        $edit->update();
+
+        return redirect('profile')->with('success', 'data saving');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\category  $category
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(category $category)
+    public function destroy($id)
     {
         //
     }

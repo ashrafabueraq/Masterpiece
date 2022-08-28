@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-  Route::get('/', function () {
-     return view('main');
-  });
+//   Route::get('/', function () {
+//      return view('main');
+//   });
 
 
 
@@ -39,11 +43,31 @@ Route::get('/contact', function () {
 // });
 
 
-Route::get('/single', function () {
-    return view('single');
-});
+// Route::get('/single', function () {
+//      return view('single');
+//  });
 
 
+
+// Route::get('profile',function (){
+//     return view('profile');
+// });
+
+//  Route::get('/single',function (){
+//          return view('single');
+//  });
+
+Route::get('single/{category_name}',[CategoryController::class,'getProduct']);
+
+
+// display when user not login
+Route::get('/',[CategoryController::class,'index']); 
+// Route::get('/',[CategoryController::class,'allProduct']); 
+// Route::get('/',[ProductController::class,'index']);
+
+Route::resource('prof',ProfileController::class);
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'category'])->name('home');
+Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index']);
