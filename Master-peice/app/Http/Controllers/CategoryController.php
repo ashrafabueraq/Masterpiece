@@ -35,7 +35,7 @@ class CategoryController extends Controller
             $products = Product::where('category_id',$category->id)->get();
             return view('single', compact('category', 'products'));
         }else{
-            return redirect('/singe{category_name}')->with('status', ' item dosnot exists');
+            return redirect('/single{category_name}')->with('status', ' item dosnot exists');
         }
 
 

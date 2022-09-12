@@ -28,6 +28,11 @@ class HomeController extends Controller
         return view('main');
     }
 
+    // public function dashboard()
+    // {
+    //     return view('dashboard.admin');
+    // }
+
     public function category(){
 
         $category = Category :: all();

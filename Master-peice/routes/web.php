@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +30,9 @@ use App\Http\Controllers\ProductController;
 
 
 
-Route::get('/auction', function () {
-    return view('auction');
-});
+// Route::get('/auction', function () {
+//     return view('auction');
+// });
 
 
 Route::get('/contact', function () {
@@ -56,7 +57,11 @@ Route::get('/contact', function () {
 //  Route::get('/single',function (){
 //          return view('single');
 //  });
+// Route::get('auction/{category_name}',[CategoryController::class,'getProduct']);
+Route::resource('spro',ProductController::class);
+Route::get('sproduct/{id}',[ProductController::class, 'sproduct']);
 
+Route::get('/auction',[ProductController::class,'index']);
 Route::get('single/{category_name}',[CategoryController::class,'getProduct']);
 
 
@@ -67,7 +72,18 @@ Route::get('/',[CategoryController::class,'index']);
 
 Route::resource('prof',ProfileController::class);
 
+
+
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/admin', [App\Http\Controllers\HomeController::class, 'dashboard']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'category'])->name('home');
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index']);
+
+
+
+Route::middleware(['auth', 'isAdmin'])->group(function (){
+    Route::get('/dashboard', function (){
+        return view('dashboard.index');
+      });
+});

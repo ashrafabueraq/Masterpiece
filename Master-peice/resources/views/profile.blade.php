@@ -111,7 +111,7 @@
                             <h6 class="mb-0"><label  class="labelname" for="phone">Phone</label></h6> 
                         </div>
                         <div class="col-sm-9 text-secondary">
-                            <input id="phone" type="number" class="form-control" placeholder="Please enter your Phone Number" value="{{Auth::user()->phone}}"name='phone'>
+                            <input id="phone" type="number" class="form-control" placeholder="Please enter your Phone Number" value="{{Auth::user()->phone}}"name='phone' required>
                         </div>
                     </div>
 
@@ -120,7 +120,7 @@
                           <h6 class="mb-0"><label  class="labelname" for="address">Address</label></h6> 
                       </div>
                       <div class="col-sm-9 text-secondary">
-                          <input id="address" type="text" class="form-control" value="{{Auth::user()->address}}" placeholder="Please enter your Address" name='address'>
+                          <input id="address" type="text" class="form-control" value="{{Auth::user()->address}}" placeholder="Please enter your Address" name='address' required>
                       </div>
                     </div>
 

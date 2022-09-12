@@ -122,12 +122,12 @@
  <div class="py-5" style="margin-top: 75px">
     <div class="container">
         <h2 style="text-align: center;"> Auction Products</h2>
-        <a href="#">
+       
         <div class="row" style="margin-top: 50px;">
             
             @foreach ($products as $p)
                 
-       
+            
             <div class="col-md-3 mb-3" >
                 <div class="card">
                     <img src="{{asset('images/'.$p->product_image)}}" alt="image">
@@ -137,11 +137,12 @@
                         <span class="float-start" style="color: red; font-weight:bold">{{$p->price}} JOD</span>
                        
                         {{-- <span class="float-end">end price</span> --}}
-                        <button class="prima">Show</button>
+                        <a href="{{url('sproduct/'.$p->id)}}"> <button class="prima">Show</button></a>
 
                     </div>
                 </div>
             </div>
+        
 
             @endforeach
            
@@ -150,7 +151,7 @@
             
 
         </div>
-    </a>
+    
 
         
     </div>
@@ -200,8 +201,9 @@
 
     .card{
         border-radius:15px;
+        border: none;
         transition: all 0.75s;
-        box-shadow: 0 0 3px 0 #00000073;
+        /* box-shadow: 0 0 3px 0 #00000073; */
         overflow: hidden;
 
     }
@@ -241,7 +243,7 @@
         border: none;
         background: linear-gradient(45deg, #fe5f28, #a90b23);
         color: white;
-        margin-left: 60px;
+        margin-left: 50px;
         cursor: pointer;
         width: 75px;
         height: 37px;
