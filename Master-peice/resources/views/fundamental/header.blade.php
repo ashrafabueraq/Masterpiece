@@ -95,7 +95,8 @@
 							<ul class="navbar_menu">
 								<li><a href="{{url('/')}}" style="font-size:15px;">Home</a></li>
 								<li><a href="{{url('auction')}}" style="font-size:15px;">Auctions</a></li>
-								<li><a href="{{url('contact')}}" style="font-size:15px;">Contact Us</a></li>
+								<li><a href="{{url('contactus')}}" style="font-size:15px;">Contact Us</a></li>
+								<li><a href="{{url('abbout')}}" style="font-size:15px;">About Us</a></li>
 							</ul>
 							{{-- <ul class="navbar_user"> --}}
 								{{-- <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li> --}}

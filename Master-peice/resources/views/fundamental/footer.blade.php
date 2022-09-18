@@ -21,9 +21,10 @@
 			<h6 class="text-uppercase fw-bold mb-4">
 			  <i class="fas fa-gem me-3"></i>Company name
 			</h6>
-			<p>
-			  Here you can use rows and columns to organize your footer content. Lorem ipsum
-			  dolor sit amet, consectetur adipisicing elit.
+			<p> 
+				E-Auction Website
+				War Bidding
+				Keep your Eye in the price
 			</p>
 		  </div>
 		  <!-- Grid column -->
@@ -32,19 +33,19 @@
 		  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 			<!-- Links -->
 			<h6 class="text-uppercase fw-bold mb-4">
-			  Products
+			  Pages
 			</h6>
 			<p>
-			  <a href="#!" class="text-reset">Angular</a>
+			  <a href="{{url('/')}}" class="text-reset">Home</a>
 			</p>
 			<p>
-			  <a href="#!" class="text-reset">React</a>
+			  <a href="{{url('auction')}}" class="text-reset">Auction</a>
 			</p>
 			<p>
-			  <a href="#!" class="text-reset">Vue</a>
+			  <a href="{{url('contactus')}}" class="text-reset">Contact Us</a>
 			</p>
 			<p>
-			  <a href="#!" class="text-reset">Laravel</a>
+			  <a href="{{url('abbout')}}" class="text-reset">About Us</a>
 			</p>
 		  </div>
 		  <!-- Grid column -->
@@ -53,16 +54,16 @@
 		  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 			<!-- Links -->
 			<h6 class="text-uppercase fw-bold mb-4">
-			  Useful links
+			  Categories
 			</h6>
 			<p>
-			  <a href="#!" class="text-reset">Pricing</a>
+			  <a href="{{url('single/Phone')}}" class="text-reset">Phones</a>
 			</p>
 			<p>
-			  <a href="#!" class="text-reset">Settings</a>
+			  <a href="{{url('single/Waches')}}" class="text-reset">Watches</a>
 			</p>
 			<p>
-			  <a href="#!" class="text-reset">Orders</a>
+			  <a href="{{url('single/Boxes')}}" class="text-reset">Boxes</a>
 			</p>
 			<p>
 			  <a href="#!" class="text-reset">Help</a>
@@ -76,14 +77,14 @@
 			<h6 class="text-uppercase fw-bold mb-4">
 			  Contact
 			</h6>
-			<p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+			<p>Jordan, Irbid 21140, JO</p>
 			<p>
-			  <i class="fas fa-envelope me-3"></i>
-			  info@example.com
+			  
+			  ashrafabueraq97@gmail.com
 			</p>
-			<p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-			<p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-		  </div>
+			<p> + 962 778 091 939</p>
+			<p> + 962 798 156 734</p>
+		</div>
 		  <!-- Grid column -->
 		</div>
 		<!-- Grid row -->
@@ -93,8 +94,8 @@
   
 	<!-- Copyright -->
 	<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-	  © 2021 Copyright:
-	  <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+	  © 2022 Copyright:
+	  <a class="text-reset fw-bold" href="https://mdbootstrap.com/">ashrafabueraq97@gmail.com</a>
 	</div>
 	<!-- Copyright -->
   </footer>

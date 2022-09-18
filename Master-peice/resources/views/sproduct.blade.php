@@ -49,19 +49,19 @@
                     </div>
 
                     <div class="div-desc">
-                        @if ($message = Session::get('success'))
+                         @if ($message = Session::get('success'))
                         <div style="color: rgb(28, 167, 28);">
                             <i class="fa-regular fa-circle-check"></i> {{$message}}
                         </div>    
                         @endif
 
-                        @if ($message = Session::get('failed'))
+                        {{-- @if ($message = Session::get('failed'))
                         <div style="color: rgb(239, 51, 17);">
                             <i class="fa-solid fa-circle-exclamation">
                             </i>{{$message}} <a href="/login" style=" text-decoration:underline ">Sign in</a> or 
                             <a href="/register" style=" text-decoration:underline ">Sign up</a>
                         </div>
-                        @endif
+                        @endif  --}}
                         {{-- @if ($message = Session::get('stop'))
                           
                         <div style="color: rgb(239, 51, 17);">
@@ -247,6 +247,51 @@
     setInterval(func, 1000);
    
   </script>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{{-- @if (session('success'))
+
+<script>
+    Swal.fire("{{session('success')}}")
+
+</script>
+    
+@endif --}}
+
+
+@if (session('failed'))
+
+<script>
+   Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: "{{session('failed')}}",
+  footer: '<a href="/login">Sign in</a> . or . <a href="/register">Sign up</a> '
+})
+
+
+
+</script>
+    
+@endif
+
+
+@if (session('sorry'))
+
+<script>
+   Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: "{{session('sorry')}}",
+  footer: '<a href="/home">Go To Home</a>'
+})
+
+
+
+</script>
+    
+@endif
 
 
 @endsection

@@ -79,15 +79,16 @@
             <div class="get_in_touch_contents">
                 <h1>Get In Touch With Us!</h1>
                 <p>Fill out the form below to recieve a free and confidential.</p>
-                <form action="post">
+                <form action="{{route('cont.store')}}" method="POST"  enctype="multipart/form-data">
+                    @csrf
                     <div>
                         <input id="input_name" class="form_input input_name input_ph" type="text" name="name" placeholder="Name" required="required" data-error="Name is required.">
                         <input id="input_email" class="form_input input_email input_ph" type="email" name="email" placeholder="Email" required="required" data-error="Valid email is required.">
-                        <input id="input_website" class="form_input input_website input_ph" type="url" name="name" placeholder="Website" required="required" data-error="Name is required.">
+                        {{-- <input id="input_website" class="form_input input_website input_ph" type="url" name="name" placeholder="Website" required="required" data-error="Name is required."> --}}
                         <textarea id="input_message" class="input_ph input_message" name="message"  placeholder="Message" rows="3" required data-error="Please, write us a message."></textarea>
                     </div>
                     <div>
-                        <button id="review_submit" type="submit" class="red_button message_submit_btn trans_300" value="Submit">send message</button>
+                        <button id="review_submit" type="submit" class="red_button message_submit_btn trans_300">send message</button>
                     </div>
                 </form>
             </div>
@@ -118,6 +119,38 @@
         </div>
     </div>
 </div> --}}
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if (session('status'))
+
+<script>
+   Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: "{{session('status')}}",
+  footer: '<a href="/login">Sign in</a> . or . <a href="/register">Sign up</a> '
+})
+
+
+
+</script>
+    
+@endif
+
+@if (session('success'))
+
+<script>
+   Swal.fire({
+  position: 'center',
+  icon: 'success',
+  title: "{{session('success')}}",
+  showConfirmButton: false,
+  timer: 1500
+})
+</script>
+    
+@endif
 
     
 @endsection

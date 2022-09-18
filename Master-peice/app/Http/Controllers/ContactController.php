@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\contact;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class ContactController extends Controller
 {
@@ -14,7 +16,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        return view('contact');
     }
 
     /**
@@ -35,7 +37,22 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(Auth::user()){
+
+            $contact = new Contact();
+            $contact->name = $request->input('name');
+            $contact->email = $request->input('email');
+            $contact->message = $request->input('message');
+             $contact->user_id = Auth::user()->id;
+    
+             $contact->save();
+    
+             return redirect('contactus')->with('success', 'thank you for your contact with us');
+
+        }else{
+            return redirect('contactus')->with('status', 'To Keep in touch with us please Sign in first');
+        }
+    
     }
 
     /**
@@ -80,6 +97,6 @@ class ContactController extends Controller
      */
     public function destroy(contact $contact)
     {
-        //
+       //
     }
 }

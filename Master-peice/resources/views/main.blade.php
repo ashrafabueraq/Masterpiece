@@ -25,8 +25,11 @@
     <div class="container">
         
         <div class="row">
-            @foreach ($category as $item)
+            
                 
+           
+            @foreach ($category as $item)
+            {{-- @if ($item->status == '1') --}}
             
             <div class="col-md-4">
                 <div class="banner_item align-items-center" style="background-image:url(images/{{$item->category_image}})">
@@ -35,88 +38,13 @@
                     </div>
                 </div>
             </div>
-
+            {{-- @endif --}}
             @endforeach
-            {{-- <div class="col-md-4">
-                <div class="banner_item align-items-center" style="background-image:url(images/watches.jpg)">
-                    <div class="banner_category">
-                        <a href="{{url('/single')}}">Watches</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="banner_item align-items-center" style="background-image:url(images/box.png)">
-                    <div class="banner_category">
-                        <a href="{{url('/single')}}">Boxes</a>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
+            
     </div>
 </div>
 </div>
 
-<!-- New Arrivals -->
-
-{{-- <div class="new_arrivals">
-    <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <div class="section_title new_arrivals_title">
-                    <h2> Auction Products</h2>
-                </div>
-            </div>
-        </div> --}}
-        {{-- <div class="row align-items-center">
-            <div class="col text-center">
-                <div class="new_arrivals_sorting">
-                    <ul class="arrivals_grid_sorting clearfix button-group filters-button-group"> --}}
-                        {{-- <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center active is-checked" data-filter="*">all</li> --}}
-                        {{-- @foreach ($category as $item)
-                            
-                        
-                       <a href="{{url('/'.$item->id)}}"> <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center">{{$item->category_name}}</li>
-                        @endforeach --}}
-                        {{-- <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" data-filter=".accessories">Watches</li>
-                        <li class="grid_sorting_button button d-flex flex-column justify-content-center align-items-center" >Boxes</li> --}}
-                    {{-- </ul>
-                </div>
-            </div>
-        </div> --}}
-
-{{-- 
-        <div class="row">
-            <div class="col">
-                <div class="product-grid" data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }' style="display: flex">
-
-
-                    @foreach ($products as $p) --}}
-                        
-                  
-
-                    {{-- <div class="product-item women">
-                        <div class="product product_filter">
-                            <div class="product_image">
-                                <img src="{{asset('images/'.$p->product_image)}}" alt="poducts">
-                            </div>
-                            <div class="favorite"></div> --}}
-                            {{-- <div class="product_bubble product_bubble_left product_bubble_green d-flex flex-column align-items-center"></div> --}}
-                            {{-- <div class="product_info">
-                                <h6 class="product_name"><a href="single.html">{{$p->product_name}}</a></h6>  --}}
-                                {{-- <p class="product_desc">{{$p->product_desc}}</p> --}}
-                                {{-- <div class="product_price">{{$p->price}} JOD</div>
-                            </div>
-                        </div>
-                        <div class="red_button add_to_cart_button"><a href="#">Bid Now</a></div>
-                    </div>
-                    @endforeach
-
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
 
   
  <div class="py-5" style="margin-top: 75px">

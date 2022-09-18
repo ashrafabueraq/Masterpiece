@@ -18,10 +18,12 @@ class CategoryController extends Controller
      */
     public function index()
     {
-         $category = Category :: all();
-         $products = Product:: all();
+         $category = Category :: where('status', '1')->get();
+         $products = Product:: where('status', '1')->get();
          return view('main', compact('category', 'products'));
     }
+
+ 
 
 
 
@@ -32,10 +34,10 @@ class CategoryController extends Controller
 
         if(Category::where('category_name', $category_name)->exists()){
             $category = Category::where('category_name', $category_name)->first();
-            $products = Product::where('category_id',$category->id)->get();
+            $products = Product::where('category_id',$category->id)->where('status', '1')->get();
             return view('single', compact('category', 'products'));
         }else{
-            return redirect('/single{category_name}')->with('status', ' item dosnot exists');
+            return redirect('/single{category_name}')->with('status', ' item does not exists');
         }
 
 

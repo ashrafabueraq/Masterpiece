@@ -18,8 +18,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product :: all();
-        $category = Category :: all();
+        $products = Product :: where('status', '1')->get();
+        $category = Category :: where('status', '1')->get();
         return  view('auction', compact('products','category'));
     }
 
@@ -32,8 +32,19 @@ class ProductController extends Controller
         //     return redirect('sproduct/{id}')->with('notexists', 'there is no item ');
         // }
 
-        $product = Product :: where('id', $id)->first(); // find($id)
-        return view('sproduct', compact('product'));
+       if( $product = Product :: where('id', $id)->exists()){
+
+             
+            $product = Product :: where('id', $id)->where('status', '1')->first();
+            return view('sproduct', compact('product'));
+
+       }
+       else{
+          
+          return redirect('auction')->with('sorry', 'Sorry No Item here');
+
+       }; 
+       
       
     }
 
@@ -103,7 +114,7 @@ class ProductController extends Controller
                     return redirect('sproduct/'.$id)->with('success', 'your bidding successfully');
                 }else{
 
-                    return redirect('sproduct/'.$id)->with('failed', ' failed you need to ');
+                    return redirect('sproduct/'.$id)->with('failed', ' failed you need to Sign in or Sign up');
                 }
                 
 

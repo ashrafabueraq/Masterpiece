@@ -18,6 +18,7 @@ class CreateCategoriesTable extends Migration
             $table->string('category_name')->unique();
             $table->string('category_description');
             $table->text('category_image');
+            $table->tinyInteger('status')->default('0');
             $table->timestamps();
         });
     }

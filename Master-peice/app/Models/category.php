@@ -13,6 +13,7 @@ class category extends Model
         'category_name',
         'category_description',
         'category-image',
+        'status',
     ];
 
     public function products(){

@@ -128,10 +128,10 @@
                             <div class="col-sm-3"></div>
                             <div class="col-sm-9 text-secondary">
                                 <button type="submit" name="submit" class="btn btn-primary px-4">Save Change </button>
-                                @if ($message = Session::get('success'))
+                                {{-- @if ($message = Session::get('success'))
                                 <span style="color: rgb(28, 167, 28)">{{$message}}</span>
                                     
-                                @endif
+                                @endif --}}
                                 
 
                                 
@@ -392,6 +392,24 @@
 
         </div>
     </div> --}}
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    @if (session('success'))
+
+    <script>
+       Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: "{{session('success')}}",
+      showConfirmButton: false,
+      timer: 1500
+    })
+    </script>
+        
+    @endif
+
+   
 
     
 @endsection
