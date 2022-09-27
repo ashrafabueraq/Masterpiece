@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Cart;
 
 class product extends Model
 {
@@ -27,4 +28,9 @@ class product extends Model
     {
       return $this->belongsTo(User::class);
     }
+
+    public function carts(){
+        
+      return $this->hasMany(Cart::class);
+  }
 }

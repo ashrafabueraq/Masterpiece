@@ -21,7 +21,11 @@ class ContactController extends Controller
 
         $contact = Contact::with('user')->get();
 
-        $user = User::with('contact')->get();
+        $user = User::with('contact')->get();   
+
+        
+        
+        
 
         return view('dashboard.contact.contact', compact('contact', 'user'));
 

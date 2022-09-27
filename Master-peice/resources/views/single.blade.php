@@ -43,8 +43,9 @@
                         <span class="float-start" style="color: red; font-weight:bold">{{$p->price}} JOD</span>
                        
                         {{-- <span class="float-end">end price</span> --}}
+                  {{-- <form action="{{url('single/'.$p->id)}}" method="GET"> --}}
                      <button class="prima">Show</button> 
-
+                  {{-- </form>   --}}
                     </div>
                 {{-- </a> --}}
                 </div>

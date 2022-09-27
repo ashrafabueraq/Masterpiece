@@ -2,6 +2,8 @@
 
 @section('content')
 
+
+
 <!-- Slider -->
 
 <div class="main_slider" style="background-image:url(images/auction.png)">
@@ -11,7 +13,7 @@
                 <div class="main_slider_content">
                     <h2 style="color: rgb(247, 241, 241)">War Bidding</h2> 
                     <h1 style="color: rgb(250, 243, 243)"> Keep your Eye in the price</h1>
-                    <div class="red_button shop_now_button"><a href="#">Auction Now</a></div>
+                    <div class="red_button shop_now_button"><a href="{{url('auction')}}">Auction Now</a></div>
                 </div>
             </div>
         </div>
@@ -98,7 +100,7 @@
             <div class="col-lg-6 text-right deal_ofthe_week_col">
                 <div class="deal_ofthe_week_content d-flex flex-column align-items-center float-right">
                     <div class="section_title">
-                        <h2>Deal Of The Week</h2>
+                        <h2>Deal Of The Month</h2>
                     </div>
                     <ul class="timer">
                         <li class="d-inline-flex flex-column justify-content-center align-items-center">
@@ -118,7 +120,7 @@
                             <div class="timer_unit">Sec</div>
                         </li>
                     </ul>
-                    <div class="red_button deal_ofthe_week_button"><a href="#">Bid Now<</a></div>
+                    <div class="red_button deal_ofthe_week_button"><a href="#">Bid Now</a></div>
                 </div>
             </div>
         </div>
@@ -191,5 +193,40 @@
 
 </style>
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ @if (session('status'))
+   <script>
+    Swal.fire("{{session('status')}}");
     
+    </script>   
+@endif
+
+
+@if (session('failed'))
+
+<script>
+   Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: "{{session('failed')}}",
+  footer: '<a href="/login">Sign in</a> . or . <a href="/register">Sign up</a> '
+})
+
+
+
+</script>
+    
+@endif
+
+@if (session('order'))
+<script>
+Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title:  "{{session('order')}}",
+    showConfirmButton: false,
+    timer: 1500
+  })
+</script>
+ @endif
 @endsection

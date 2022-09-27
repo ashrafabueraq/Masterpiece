@@ -21,7 +21,7 @@
 
                          
         <div class="div-img">    
-            <img src="{{asset('images/rolex_bg.jpg')}}" width="100%" height="400px">     
+            <img src="{{asset('images/Untitled.png')}}" width="100%" height="400px">     
            <div style="background-color: #f0f8ff29"> <h1 class="hcat">All Products</h1> </div>    
         
         </div>

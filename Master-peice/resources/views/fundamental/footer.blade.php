@@ -19,7 +19,7 @@
 		  <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 			<!-- Content -->
 			<h6 class="text-uppercase fw-bold mb-4">
-			  <i class="fas fa-gem me-3"></i>Company name
+			  <i class="fas fa-gem me-3"></i> Company name
 			</h6>
 			<p> 
 				E-Auction Website
@@ -75,15 +75,19 @@
 		  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 			<!-- Links -->
 			<h6 class="text-uppercase fw-bold mb-4">
-			  Contact
+			  Contact-Info
 			</h6>
-			<p>Jordan, Irbid 21140, JO</p>
+			
 			<p>
-			  
+				<i class="fa-solid fa-location-dot"></i>
+				Jordan, Irbid 21140, JO
+			</p>
+			<p>
+				<i class="fa-regular fa-envelope"></i>
 			  ashrafabueraq97@gmail.com
 			</p>
-			<p> + 962 778 091 939</p>
-			<p> + 962 798 156 734</p>
+			<p><i class="fa-solid fa-phone"></i> + 962 778 091 939</p>
+			<p><i class="fa-solid fa-phone"></i> + 962 798 156 734</p>
 		</div>
 		  <!-- Grid column -->
 		</div>

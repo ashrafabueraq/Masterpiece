@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 
 use App\Http\Controllers\ContactController;
 
@@ -65,7 +66,9 @@ Route::get('contactus', [ContactController::class, 'index']);
 
 Route::get('abbout', [App\Http\Controllers\AboutController::class, 'index']);
 
-
+Route::resource('buy',CartController::class);
+Route::resource('del',CartController::class);
+// Route::get('sproduct/{id}',[CartController::class, 'getprod']);
 
 Route::resource('spro',ProductController::class);
 Route::get('sproduct/{id}',[ProductController::class, 'sproduct']);
@@ -84,12 +87,20 @@ Route::get('/',[CategoryController::class,'index']);
 Route::resource('prof',ProfileController::class);
 
 
-
+Route::get('/order/{id}', [App\Http\Controllers\OrderController::class, 'index']); 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 // Route::get('/admin', [App\Http\Controllers\HomeController::class, 'dashboard']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'category'])->name('home');
 Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index']);
+
+Route::get('/cart', [App\Http\Controllers\CartController::class, 'index']);
+Route::get('/checkout', [App\Http\Controllers\CheckoutController::class, 'index']);
+Route::post('place_order', [App\Http\Controllers\CheckoutController::class, 'placeorder']);
+
+
+
+
 
 
 
@@ -143,6 +154,14 @@ Route::middleware(['auth', 'isAdmin'])->group(function (){
 
 
     Route::resource('editabout', App\Http\Controllers\Admin\AboutrAdminController::class );
+
+    Route::get('cartadmin', [App\Http\Controllers\Admin\CartAdmincontroller::class, 'index']);
+
+    Route::get('orderadmin', [App\Http\Controllers\Admin\OrderAdminController::class, 'index']);
+
+    Route::get('orderdetails/{id}', [App\Http\Controllers\Admin\OrderAdminController::class, 'orderdetails']);
+
+
 
     
 

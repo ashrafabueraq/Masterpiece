@@ -108,10 +108,17 @@ class ProductController extends Controller
         
                 if (Auth:: user()){
                     $product = Product :: find($id);
-                    $product->price = $product->price + .5;  //$request->input('input_bid');
-                    $product->update();
+                    if($product->max_number > $product->price){
 
-                    return redirect('sproduct/'.$id)->with('success', 'your bidding successfully');
+                        $product->price = $product->price + .5;  //$request->input('input_bid');
+                        $product->update();
+    
+                        return redirect('sproduct/'.$id)->with('success', 'your bidding successfully');
+
+                    }else{
+                        return redirect('sproduct/'.$id)->with('less', ' the price must be less than '.$product->max_number);
+                    }
+                  
                 }else{
 
                     return redirect('sproduct/'.$id)->with('failed', ' failed you need to Sign in or Sign up');

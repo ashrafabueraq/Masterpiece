@@ -107,10 +107,25 @@
                         <form method="POST" action="{{route('spro.update', $product->id)}}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT') 
-                            <label for="bid" class="youbid">Your bid : </label> <br>
-                            <h5>{{$product->price}} JOD</h5>
+                            <label for="bid" class="youbid">Your bid is : </label> <br>
+                             
+                            <h5>00.50 JOD</h5>
+                            {{-- <h5>{{$product->price}} JOD</h5> --}}
                             {{-- <input type="number" class="form-control w-50 p3" id="bid" name="input_bid" value="{{$product->price}}" required> --}}
                             <input type="submit" class="sub" name="submit_bid" id="bid" value="Bid now">
+                            
+
+
+                        </form>
+                        
+                        <form method="POST" action="{{route('buy.store')}}" enctype="multipart/form-data">
+                            @csrf
+                          
+                            {{-- <h5>{{$product->price}} JOD</h5> --}}
+                            {{-- <input type="number" class="form-control w-50 p3" id="bid" name="input_bid" value="{{$product->price}}" required> --}}
+
+                            <input type="hidden" name="buypro" value="{{$product->id}}">
+                            <input type="submit" class="sub" name="submit_bid" id="bidd" value="Add TO Cart   {{$product->max_number}}">
                             
 
 
@@ -215,10 +230,12 @@
         var date = Math.abs((new Date().getTime() / 1000).toFixed(0));
         var date2 = Math.abs((new Date(dateValue).getTime() / 1000).toFixed(0));
 
+        // console.log(new Date().getTime());
+
         var diff = date2 - date;
 
-        var days = Math.floor(diff / 86400 );
-        var hours = Math.floor(diff / 3600 ) % 24;
+        var days = Math.floor(diff / 86400 ); // 60*60*24
+        var hours = Math.floor(diff / 3600 ) % 24; // 60*60
         var minutes = Math.floor(diff / 60 ) % 60;
         var seconds = diff % 60;
 
@@ -245,6 +262,7 @@
     }
     func();
     setInterval(func, 1000);
+
    
   </script>
 
@@ -276,7 +294,23 @@
     
 @endif
 
+@if (session('less'))
 
+<script>
+   Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: "{{session('less')}}",
+  
+})
+
+
+
+</script>
+    
+@endif
+
+{{-- 
 @if (session('sorry'))
 
 <script>
@@ -291,7 +325,7 @@
 
 </script>
     
-@endif
+@endif --}}
 
 
 @endsection

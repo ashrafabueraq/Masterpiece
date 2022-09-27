@@ -50,19 +50,26 @@ class ProdAdminController extends Controller
             $product->product_image = $filename;
         }
 
-       
-        $product->product_name = $request->input('name');
-        $product->price = $request->input('price');
-        $product->product_desc = $request->input('description'); 
-        $product->status = $request->input('Status') == TRUE ? '1' : '0'; 
-        $product->category_id = $request->input('cate_id');
-        $product->created_at = $request->input('date');
-        // $product->created_at = $request->input('time');
+        if( $request->input('max_price') > $request->input('price')){
 
-
-        $product->save();
-
-        return redirect('prodAdmin')->with('status','Product Added Successfully');
+            $product->product_name = $request->input('name');
+            $product->price = $request->input('price');
+            $product->max_number = $request->input('max_price');
+            $product->product_desc = $request->input('description'); 
+            $product->status = $request->input('Status') == TRUE ? '1' : '0'; 
+            $product->category_id = $request->input('cate_id');
+            $product->created_at = $request->input('date');
+            // $product->created_at = $request->input('time');
+    
+    
+            $product->save();
+    
+            return redirect('prodAdmin')->with('status','Product Added Successfully');
+                   
+        }else{
+            return redirect('prodAdmin')->with('status','Max Price Must be greater than price');
+        }
+      
 
     }
 
@@ -109,9 +116,11 @@ class ProdAdminController extends Controller
             $product->product_image = $filename;
         }
 
-       
+       if( $request->input('max_price') > $request->input('price')){
+
         $product->product_name = $request->input('name');
         $product->price = $request->input('price');
+        $product->max_number = $request->input('max_price');
         $product->product_desc = $request->input('description'); 
         $product->status = $request->input('Status') == TRUE ? '1' : '0'; 
         // $product->category_id = $request->input('cate_id');
@@ -122,6 +131,12 @@ class ProdAdminController extends Controller
         $product->update();
 
         return redirect('prodAdmin')->with('status','Product Edited Successfully');
+
+       }
+       else{
+        return redirect('prodAdmin')->with('status','Max Price Must be greater than price');
+       }
+        
     }
 
     /**

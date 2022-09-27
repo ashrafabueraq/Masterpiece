@@ -155,28 +155,32 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="card">
+                          <div class="card-header">
+                            <h4>My Order</h4>
+                          </div>
                             <div class="card-body">
-                                <h5 class="d-flex align-items-center mb-3">Project Status</h5>
-                                <p>Web Design</p>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <p>Website Markup</p>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 72%" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <p>One Page</p>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <p>Mobile Template</p>
-                                <div class="progress mb-3" style="height: 5px">
-                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <p>Backend API</p>
-                                <div class="progress" style="height: 5px">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
+                              <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>Tracking Number</th>
+                                    <th>Total Price</th>
+                                    <th>status</th>
+                                     <th> Action</th> 
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  @foreach ($orders as $item) 
+                                  <tr>
+                                    <td>{{$item->fname}}00015</td>
+                                    <td>{{$item->total_price}}</td>
+                                     <td>{{$item->status == '0' ? 'Pending' : 'Completed'}}</td> 
+                                    <td><a href="{{url('order/'.$item->id)}}" class="btn btn-primary">View</a></td>
+                                  </tr>
+
+                                  @endforeach
+                                </tbody>
+                              </table>                              
                             </div>
                         </div>
                     </div>

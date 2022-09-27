@@ -28,24 +28,24 @@
           <p>Categories</p>
         </a>
       </li>
-      <li class="nav-item {{Request::is('add_category') ? 'active' : ''}} ">
+      {{-- <li class="nav-item {{Request::is('add_category') ? 'active' : ''}} ">
         <a class="nav-link" href="{{url('add_category')}}">
           <i class="material-icons">content_paste</i>
           <p>Add Categories</p>
         </a>
-      </li>
+      </li> --}}
       <li class="nav-item {{Request::is('prodAdmin') ? 'active' : ''}} ">
         <a class="nav-link" href="{{url('prodAdmin')}}">
           <i class="material-icons">content_paste</i>
           <p>Productes</p>
         </a>
       </li>
-      <li class="nav-item {{Request::is('add_product') ? 'active' : ''}} ">
+      {{-- <li class="nav-item {{Request::is('add_product') ? 'active' : ''}} ">
         <a class="nav-link" href="{{url('add_product')}}">
           <i class="material-icons">content_paste</i>
           <p>Add Product</p>
         </a>
-      </li>
+      </li> --}}
       <li class="nav-item {{Request::is('contact') ? 'active' : ''}} ">
         <a class="nav-link" href="{{url('contact')}}">
           <i class="material-icons">content_paste</i>
@@ -56,6 +56,18 @@
         <a class="nav-link" href="{{url('aboutus')}}">
           <i class="material-icons">content_paste</i>
           <p>About Us</p>
+        </a>
+      </li>
+      <li class="nav-item {{Request::is('cartadmin') ? 'active' : ''}} ">
+        <a class="nav-link" href="{{url('cartadmin')}}">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <p>Cart</p>
+        </a>
+      </li>
+      <li class="nav-item {{Request::is('orderadmin') ? 'active' : ''}} ">
+        <a class="nav-link" href="{{url('orderadmin')}}">
+          <i class="material-icons">content_paste</i>
+          <p>Orders</p>
         </a>
       </li>
     </ul>

@@ -29,15 +29,22 @@
                     <input type="number" class="form-control" name="price" value="{{$product->price}}">
                 </div>
 
+                <div class="col-md-6 mb-3">
+                    <label for="">Max Price</label>
+                    <input type="number" class="form-control" name="max_price" value="{{$product->max_number}}">
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="">Expire Date</label>
+                    <input type="date" class="form-control" name="date" value="{{$product->created_at}}" required>
+                </div>
+
                 <div class="col-md-12 mb-3">
                     <label for="">Description</label>
                     <textarea name="description" rows="3" class="form-control">{{$product->product_desc}}</textarea>
                 </div>
 
-                <div class="col-md-12 mb-3">
-                    <label for="">Expire Date</label>
-                    <input type="date" class="form-control" name="date" value="{{$product->created_at}}" required>
-                </div>
+                
                {{-- 
                  <div class="col-md-6 mb-3">
                     <label for="">Time</label>

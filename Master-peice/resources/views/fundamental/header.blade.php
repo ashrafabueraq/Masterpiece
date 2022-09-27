@@ -16,7 +16,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('plugins/OwlCarousel2-2.2.1/animate.css')}}">
 <link rel="stylesheet" type="text/css" href=" {{asset('styles/main_styles.css')}}">
 <link rel="stylesheet" type="text/css" href=" {{asset('styles/responsive.css')}}">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -39,6 +39,10 @@
 					<div class="col-md-6 text-right">
 						<div class="top_nav_right">
 							<ul class="top_nav_menu">
+								<a href="{{url('/cart')}}">
+									 
+									 <i class="fa-solid fa-cart-shopping" style="color: #b0aac4; font-size:20px;"></i>
+								</a>
 								<li class="account">
 									<a href="#">
 										My Account

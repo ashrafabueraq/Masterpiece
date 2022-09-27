@@ -9,6 +9,10 @@
 <link rel="stylesheet" type="text/css" href="styles/contact_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
 
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 </head>
 
 <div class="container contact_container">
@@ -29,7 +33,7 @@
 
     <!-- Map Container -->
 
-     <div class="row" style="background-image: url(images/aucontact.png);">
+     <div class="row" style="background-image: url(images/contact.jpg); background-size:cover">
         <div class="col">
             <div id="google_map">
                 <div class="map_container">
@@ -49,16 +53,16 @@
                 <h1>Contact Us</h1>
                 <p>There are many ways to contact us. You may drop us a line, give us a call or send an email, choose what suits you the most.</p>
                 <div>
-                    <p>(800) 686-6688</p>
-                    <p>info.deercreative@gmail.com</p>
+                    <p>(+962) 778-091939</p>
+                    <p>ashrafabueraq97@gmail.com</p>
                 </div>
-                <div>
+                {{-- <div>
                     <p>mm</p>
-                </div>
-                <div>
+                </div> --}}
+                {{-- <div>
                     <p>Open hours: 8.00-18.00 Mon-Fri</p>
                     <p>Sunday: Closed</p>
-                </div>
+                </div> --}}
             </div>
 
             <!-- Follow Us -->
@@ -66,10 +70,10 @@
             <div class="follow_us_contents">
                 <h1>Follow Us</h1>
                 <ul class="social d-flex flex-row">
-                    <li><a href="#" style="background-color: #3a61c9"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#" style="background-color: #41a1f6"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#" style="background-color: #fb4343"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                    <li><a href="#" style="background-color: #8f6247"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href="#" style="background-color: #3a61c9"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="#" style="background-color: #41a1f6"><i class="fa-brands fa-twitter"></i></i></a></li>
+                    <li><a href="#" style="background-color: #fb4343"><i class="fa-brands fa-google-plus-g"></i></a></li>
+                    <li><a href="#" style="background-color: #8f6247"><i class="fa-brands fa-instagram"></i></a></li>
                 </ul>
             </div>
 

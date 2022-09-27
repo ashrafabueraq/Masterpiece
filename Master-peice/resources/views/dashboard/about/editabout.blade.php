@@ -11,8 +11,9 @@
         <h4>Add Category</h4>
     </div>
     <div class="card-body">
-        <form action="{{route('editabout.store')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('editabout.update', $about->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
             <div class="row">
               
 

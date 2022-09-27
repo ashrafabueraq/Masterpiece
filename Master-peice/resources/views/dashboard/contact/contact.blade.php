@@ -6,7 +6,7 @@
 <div class="card">
 
     <div class="card-header">
-        <h4>Cateegory Page  </h4>
+        <h4>Contact Page  </h4>
        
         <hr>
         {{-- <a href="{{url('contact')}}" class="btn btn-primary">Contact Messages</a> --}}
@@ -40,6 +40,7 @@
                     <td>
                         {{$item->user->name}}
                     </td>
+                    
                     <td>
                         <form action="{{route('remove.destroy', $item->id)}}" method="POST" >
                             @csrf

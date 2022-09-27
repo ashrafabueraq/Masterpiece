@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Order;
+use App\Models\OrderItem;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -27,18 +29,10 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-
-
     {
-        // $data = [
-        //     'name' => 'ashraf',
-        //     'age' => '25',            
-        // ];
-       // compact('data')
-    //    $data = User :: all();
-           
-       
-        return view('profile');
+        $orders = Order::where('user_id', Auth::user()->id)->get();
+        
+        return view('profile', compact('orders'));
     }
 
     /**

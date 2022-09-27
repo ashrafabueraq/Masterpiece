@@ -24,15 +24,24 @@
                     <input type="number" class="form-control" name="price">
                 </div>
 
+                <div class="col-md-6 mb-3">
+                    <label for="">Max Price</label>
+                    <input type="number" class="form-control" name="max_price">
+                </div>
+
+                
+                <div class="col-md-6 mb-3">
+                    <label for="">Expire Date</label>
+                    <input type="date" class="form-control" name="date">
+                </div>
+
+
+
                 <div class="col-md-12 mb-3">
                     <label for="">Description</label>
                     <textarea name="description" rows="3" class="form-control"> </textarea>
                 </div>
 
-                <div class="col-md-12 mb-3">
-                    <label for="">Expire Date</label>
-                    <input type="date" class="form-control" name="date">
-                </div>
                {{-- 
                  <div class="col-md-6 mb-3">
                     <label for="">Time</label>

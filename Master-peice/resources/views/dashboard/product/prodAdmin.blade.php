@@ -17,7 +17,8 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Description</th>
-                    <th>Price</th>
+                    <th>Bid Price</th>
+                    <th>Max Price</th>
                     <th>Expire Date</th>
                     <th>Image</th>
                     <th>Edit</th>
@@ -31,6 +32,7 @@
                     <td>{{$item->product_name}}</td>
                     <td>{{$item->product_desc}}</td>
                     <td>{{$item->price}} JOD</td>
+                    <td>{{$item->max_number}} JOD</td>
                     <td>{{$item->created_at}}</td>
                     <td>
                          <img src="{{asset('images/'.$item->product_image)}}" alt="image" width="150px" height="100px"> 
